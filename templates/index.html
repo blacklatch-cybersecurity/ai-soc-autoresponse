@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blacklatch SOAR Engine</title>
+</head>
+<body>
+<h2>🛡️ AI SOC Auto-Response Engine</h2>
+
+<form id="alertForm">
+    <textarea id="alert" placeholder="Paste alert text..."></textarea><br>
+    <input id="ip" placeholder="Threat IP (optional)">
+    <button type="submit">Analyze</button>
+</form>
+
+<pre id="result"></pre>
+
+<script>
+document.getElementById('alertForm').onsubmit = async (e) => {
+    e.preventDefault();
+    let res = await fetch("/api/analyze", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            alert: document.getElementById('alert').value,
+            ip: document.getElementById('ip').value
+        })
+    });
+    document.getElementById('result').innerText = JSON.stringify(await res.json(), null, 2);
+};
+</script>
+
+</body>
+</html>
