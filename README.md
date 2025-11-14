@@ -1,12 +1,26 @@
+<p align="center">
+  <img src="screenshots/logo.png" width="250">
+</p>
+
 🚨 AI-SOC-AutoResponse
 Autonomous SOC Engine for Alert Triage, Threat Classification & Automated Response
 
 AI-SOC-AutoResponse is an intelligent lightweight SOAR engine designed to assist SOC teams by automating alert analysis, threat scoring, IOC enrichment, and response recommendation.
 Built for speed, clarity, and real-world SOC workflows.
 
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Framework](https://img.shields.io/badge/Framework-Flask-orange)
+![AI](https://img.shields.io/badge/AI-NLP%20Engine-purple)
+![Security](https://img.shields.io/badge/SOC-Automation-red)
+
+---
+
 ⚡ Features
 AI-Driven Alert Classification
 Uses NLP + rule-based logic to classify logs: malware, phishing, brute-force, beaconing, suspicious access, and more.
+
+---
 
 Real-time IOC Enrichment
 Fetches WHOIS, domain age, DNS records, and reputation indicators.
@@ -23,6 +37,8 @@ Integrates with SIEM, SOAR, ELK pipelines, or scripts.
 Simple Flask Dashboard
 Submit logs, view analysis instantly, clean UI for demonstrations and SOC assessments.
 
+---
+
 🧠 How It Works
 Input: Raw alert/log from SIEM, firewall, endpoint, or proxy
 AI Engine: NLP classifier + custom rule evaluator
@@ -33,12 +49,15 @@ Response Suggestion: Smart decision engine
 
 Output: JSON + dashboard visualization
 
+---
+
 🚀 Run Locally
 git clone https://github.com/blacklatch-cybersecurity/ai-soc-autoresponse.git
 cd ai-soc-autoresponse
 pip install -r requirements.txt
 ./run.sh
 
+---
 
 Dashboard runs on:
 http://127.0.0.1:9600
@@ -61,6 +80,8 @@ Response
   "iocs": ["185.22.13.9"]
 }
 
+---
+
 📂 Project Structure
 ai-soc-autoresponse/
 │── app/
@@ -79,12 +100,16 @@ ai-soc-autoresponse/
 │── requirements.txt
 │── README.md
 
+---
+
 🛡️ Future Enhancements
 Integrate MITRE ATT&CK mapping
 Add auto-block API for firewall + EDR
 Add threat graph visualization
 Add webhook notifications (Slack, Teams, Telegram)
 Add live streaming log analyzer
+
+---
 
 👑 Author
 Built by Blacklatch Cybersecurity Defense — Autonomous Threat Engineering & Cyber Deception Systems.
