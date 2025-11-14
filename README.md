@@ -52,6 +52,7 @@ Output: JSON + dashboard visualization
 ---
 
 🚀 Run Locally
+
 git clone https://github.com/blacklatch-cybersecurity/ai-soc-autoresponse.git
 cd ai-soc-autoresponse
 pip install -r requirements.txt
