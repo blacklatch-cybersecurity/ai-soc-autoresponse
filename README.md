@@ -1,72 +1,84 @@
-<p align="center">
-  <img src="screenshots/logo.png" width="250">
-</p>
+# 🚨 AI-SOC-AutoResponse  
+### Autonomous SOC Engine for Alert Triage, Threat Classification & Automated Response
 
-🚨 AI-SOC-AutoResponse
-Autonomous SOC Engine for Alert Triage, Threat Classification & Automated Response
-
-AI-SOC-AutoResponse is an intelligent lightweight SOAR engine designed to assist SOC teams by automating alert analysis, threat scoring, IOC enrichment, and response recommendation.
-Built for speed, clarity, and real-world SOC workflows.
-
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Framework](https://img.shields.io/badge/Framework-Flask-orange)
-![AI](https://img.shields.io/badge/AI-NLP%20Engine-purple)
-![Security](https://img.shields.io/badge/SOC-Automation-red)
+AI-SOC-AutoResponse is an intelligent lightweight SOAR engine built to automate alert triage, IOC enrichment, threat scoring, and response recommendations.  
+Ideal for SOC teams that need clarity, speed, and smart analysis.
 
 ---
 
-⚡ Features
-AI-Driven Alert Classification
-Uses NLP + rule-based logic to classify logs: malware, phishing, brute-force, beaconing, suspicious access, and more.
+## 📊 **Status**
+**Language:** Python  
+**Framework:** Flask  
+**Category:** AI Security / SOC Automation  
 
 ---
 
-Real-time IOC Enrichment
-Fetches WHOIS, domain age, DNS records, and reputation indicators.
+## ⚡ **Features**
 
-Risk Scoring Engine
-Produces a final severity score (Low/Medium/High/Critical) based on indicators.
+### 🔹 **AI-Driven Alert Classification**  
+Uses NLP + rules to classify logs into:  
+- Malware  
+- Phishing  
+- Brute-force  
+- Beaconing  
+- Privilege misuse  
+- Suspicious access
 
-Auto-Response Suggestions
-Suggests actions such as block, isolate endpoint, disable user, reset password, revoke token, or escalate to Tier-2.
+### 🔹 **Real-Time IOC Enrichment**  
+Automatic lookup of:  
+- WHOIS  
+- Domain age  
+- DNS (A, NS, MX)  
+- Reputation signals  
 
-Clean JSON API
-Integrates with SIEM, SOAR, ELK pipelines, or scripts.
+### 🔹 **Risk Scoring Engine**  
+Weighted scoring → **Low / Medium / High / Critical**.
 
-Simple Flask Dashboard
-Submit logs, view analysis instantly, clean UI for demonstrations and SOC assessments.
+### 🔹 **Auto-Response Suggestions**  
+Recommends actions like:  
+- Block IP  
+- Isolate endpoint  
+- Disable user  
+- Reset password  
+- Escalate to Tier-2  
+
+### 🔹 **Clean JSON API**  
+Works with SIEM, SOAR, ELK, custom pipelines.
+
+### 🔹 **Simple Flask Dashboard**  
+Enter logs → View instant AI analysis.
 
 ---
 
-🧠 How It Works
-Input: Raw alert/log from SIEM, firewall, endpoint, or proxy
-AI Engine: NLP classifier + custom rule evaluator
-Correlation: Extracts IPs, domains, usernames, event types
-Enrichment: Domain reputation, IP info, age, keywords, anomalies
-Risk Score: Weighted system to calculate overall severity
-Response Suggestion: Smart decision engine
+## 🧠 **How It Works**
 
-Output: JSON + dashboard visualization
+1. **Input:** Raw log / alert  
+2. **AI Classifier:** NLP + keyword logic  
+3. **IOC Extraction:** IPs, domains, usernames  
+4. **Enrichment:** WHOIS + DNS + reputation  
+5. **Risk Score:** Weighted scoring engine  
+6. **Response Suggestion:** Dynamic SOC playbooks  
+7. **Output:** JSON + Dashboard view  
 
 ---
 
-🚀 Run Locally
+## 🚀 **Run Locally**
 
+```bash
 git clone https://github.com/blacklatch-cybersecurity/ai-soc-autoresponse.git
 cd ai-soc-autoresponse
 pip install -r requirements.txt
 ./run.sh
 
----
-
-Dashboard runs on:
+Dashboard:
 http://127.0.0.1:9600
+
+---
 
 🧪 API Example
 Request
+
 POST /api/analyze
-Content-Type: application/json
 
 {
   "log": "Failed SSH login from 185.22.13.9 user root"
@@ -86,31 +98,28 @@ Response
 📂 Project Structure
 ai-soc-autoresponse/
 │── app/
-│   ├── app.py            # Dashboard + API
-│   ├── templates/        # UI
-│   └── static/           # CSS/JS
+│   ├── app.py           # Dashboard + API
+│   ├── templates/       # UI
+│   └── static/          # CSS/JS
 │
 │── engine/
-│   ├── classify.py       # Log classifier
-│   ├── enrich.py         # IOC enrichment
-│   ├── scorer.py         # Severity scoring
-│   └── response.py       # Playbook actions
+│   ├── classify.py      # NLP classifier
+│   ├── enrich.py        # IOC lookups
+│   ├── scorer.py        # Severity engine
+│   └── response.py      # Response playbooks
 │
 │── data/
 │── run.sh
 │── requirements.txt
 │── README.md
 
----
-
 🛡️ Future Enhancements
-Integrate MITRE ATT&CK mapping
-Add auto-block API for firewall + EDR
-Add threat graph visualization
-Add webhook notifications (Slack, Teams, Telegram)
-Add live streaming log analyzer
-
----
+MITRE ATT&CK mapping
+Auto-block APIs (Firewall / EDR)
+Threat graph visualization
+Slack / Teams / Telegram webhooks
+Live log streaming
 
 👑 Author
-Built by Blacklatch Cybersecurity Defense — Autonomous Threat Engineering & Cyber Deception Systems.
+Blacklatch Cybersecurity Defense
+Autonomous Threat Engineering & Cyber Deception Systems
